@@ -1,0 +1,28 @@
+:root {
+    --square_px: 37.5px;
+}
+
+#title-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#buttons-container {
+    margin: 10px auto;
+    text-align: center;
+}
+
+#pad-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+
+.canvas-square {
+    width: var(--square_px);
+    height: var(--square_px);
+    flex-shrink: 0;
+}
