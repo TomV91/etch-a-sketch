@@ -94,12 +94,22 @@ function drag_black(event) {
 }
 
 function click_grey(event) {
-    event.target.classList.add('greyscale_base');
+    if (event.target.classList.contains('greyscale_base') != true) {
+        event.target.classList.add('greyscale_base');
+    }
+    else {
+        event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
+    }
 }
 
 function drag_grey(event) {
     if (mouse_drag === true) {
-        event.target.classList.add('greyscale_base');
+        if (event.target.classList.contains('greyscale_base') != true) {
+            event.target.classList.add('greyscale_base');
+        }
+        else {
+            event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
+        }
     }
 }
 
