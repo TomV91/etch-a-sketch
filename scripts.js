@@ -84,18 +84,24 @@ function set_eraser() {
 }
 
 function click_black(event) {
+    event.target.classList.remove('greyscale_base');
     event.target.style.backgroundColor = 'black';
+    event.target.style.opacity = 1;
 }
 
 function drag_black(event) {
     if (mouse_drag === true) {
+        event.target.classList.remove('greyscale_base');
         event.target.style.backgroundColor = 'black';
+        event.target.style.opacity = 1;
     }
 }
 
 function click_grey(event) {
     if (event.target.classList.contains('greyscale_base') != true) {
         event.target.classList.add('greyscale_base');
+        event.target.style.backgroundColor = 'black';
+        event.target.style.opacity = 0.1;
     }
     else {
         event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
@@ -106,6 +112,8 @@ function drag_grey(event) {
     if (mouse_drag === true) {
         if (event.target.classList.contains('greyscale_base') != true) {
             event.target.classList.add('greyscale_base');
+            event.target.style.backgroundColor = 'black';
+            event.target.style.opacity = 0.1;
         }
         else {
             event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
@@ -114,22 +122,30 @@ function drag_grey(event) {
 }
 
 function click_rainbow(event) {
+    event.target.classList.remove('greyscale_base');
     event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    event.target.style.opacity = 1;
 }
 
 function drag_rainbow(event) {
     if (mouse_drag === true) {
+        event.target.classList.remove('greyscale_base');
         event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        event.target.style.opacity = 1;
     }
 }
 
 function click_eraser(event) {
+    event.target.classList.remove('greyscale_base');
     event.target.style.backgroundColor = 'white';
+    event.target.style.opacity = 1;
 }
 
 function drag_eraser(event) {
     if (mouse_drag === true) {
+        event.target.classList.remove('greyscale_base');
         event.target.style.backgroundColor = 'white';
+        event.target.style.opacity = 1;
     }
 }
 

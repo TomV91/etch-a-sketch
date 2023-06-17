@@ -27,7 +27,7 @@
     flex-shrink: 0;
 }
 
+/* Greyscale class only used to "tag" squares for greyscale - useless CSS property */
 .greyscale_base {
-    background-color: black;
-    opacity: 0.1;
+    visibility: visible;
 }
