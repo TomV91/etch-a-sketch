@@ -2,23 +2,37 @@
     --square_px: 37.5px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #title-container {
-    margin: 0 auto;
+    margin-left: 108px;
     text-align: center;
 }
 
+#main-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
 #buttons-container {
-    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    gap: 15px;
 }
 
 #pad-container {
     width: 600px;
     height: 600px;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     border: 2px solid black;
+    box-shadow: 5px 5px 0px black;
 }
 
 .canvas-square {
