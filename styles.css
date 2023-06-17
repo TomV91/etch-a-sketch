@@ -8,8 +8,18 @@ body {
     align-items: center;
 }
 
+button {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: darkgrey;
+}
+
 #title-container {
-    margin-left: 108px;
     text-align: center;
 }
 
@@ -19,7 +29,14 @@ body {
     gap: 25px;
 }
 
-#buttons-container {
+#buttons-container-1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+#buttons-container-2 {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -31,9 +48,12 @@ body {
     height: 600px;
     display: flex;
     flex-wrap: wrap;
+    flex-shrink: 0;
     border: 2px solid black;
-    box-shadow: 5px 5px 0px black;
+    box-shadow: 5px 5px 0px darkgray;
 }
+
+
 
 .canvas-square {
     width: var(--square_px);
