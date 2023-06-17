@@ -1,8 +1,3 @@
-// SET UP GIT BEFORE CONTINUING!
-
-// TO DOS: Add Grayscale  - Add label indicating canvas size (dynamically update with JS)
-// ADD CSS TO STYLE PAGE TO LOOK NICE
-
 // Initializing variables
 
 let container = document.querySelector('#pad-container');
@@ -55,22 +50,25 @@ function custom_pad() {
 function set_black() {
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
-        square.removeEventListener('click', click_rainbow);
-        square.removeEventListener('mouseenter', drag_rainbow);
-        square.removeEventListener('click', click_eraser);
-        square.removeEventListener('mouseenter', drag_eraser);
+        clear_event_listeners(square);
         square.addEventListener('click', click_black);
         square.addEventListener('mouseenter', drag_black);
+    }
+}
+
+function set_gray() {
+    for (let i = 0; i < Math.pow(canvas_size,2); i++) {
+        square = document.querySelector(`#square${i}`);
+        clear_event_listeners(square);
+        square.addEventListener('click', click_grey);
+        square.addEventListener('mouseenter', drag_grey);
     }
 }
 
 function set_rainbow() {
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
-        square.removeEventListener('click', click_black);
-        square.removeEventListener('mouseenter', drag_black);
-        square.removeEventListener('click', click_eraser);
-        square.removeEventListener('mouseenter', drag_eraser);
+        clear_event_listeners(square);
         square.addEventListener('click', click_rainbow);
         square.addEventListener('mouseenter', drag_rainbow);
     }
@@ -79,10 +77,7 @@ function set_rainbow() {
 function set_eraser() {
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
-        square.removeEventListener('click', click_black);
-        square.removeEventListener('mouseenter', drag_black);
-        square.removeEventListener('click', click_rainbow);
-        square.removeEventListener('mouseenter', drag_rainbow);
+        clear_event_listeners(square);
         square.addEventListener('click', click_eraser);
         square.addEventListener('mouseenter', drag_eraser);
     }
@@ -95,6 +90,16 @@ function click_black(event) {
 function drag_black(event) {
     if (mouse_drag === true) {
         event.target.style.backgroundColor = 'black';
+    }
+}
+
+function click_grey(event) {
+    event.target.classList.add('greyscale_base');
+}
+
+function drag_grey(event) {
+    if (mouse_drag === true) {
+        event.target.classList.add('greyscale_base');
     }
 }
 
@@ -122,6 +127,17 @@ function clear_pad() {
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         document.querySelector(`#square${i}`).style.backgroundColor = 'white';
     }
+}
+
+function clear_event_listeners(pad_square) {
+    pad_square.removeEventListener('click', click_black);
+    pad_square.removeEventListener('mouseenter', drag_black);
+    pad_square.removeEventListener('click', click_grey);
+    pad_square.removeEventListener('mouseenter', drag_grey);
+    pad_square.removeEventListener('click', click_rainbow);
+    pad_square.removeEventListener('mouseenter', drag_rainbow);
+    pad_square.removeEventListener('click', click_eraser);
+    pad_square.removeEventListener('mouseenter', drag_eraser);
 }
 
 // Builds default pad
