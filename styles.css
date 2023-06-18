@@ -15,6 +15,15 @@ body {
     background-color: rgba(126, 196, 178, 0.5);
 }
 
+label {
+    padding: 2px 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: 1.5px ridge rgb(85, 85, 85);
+}
+
 button {
     border-radius: 5px;
     background-color: black;
@@ -23,13 +32,13 @@ button {
     font-family: 'VCR', sans-serif;
 }
 
-button:hover {
-    background-color: rgb(123, 123, 123);
-    cursor: pointer;
-}
-
 #title-container {
     text-align: center;
+    margin-bottom: 10px;
+}
+
+#title-container > h1 {
+    margin-top: 10px;
 }
 
 #main-container {
@@ -50,6 +59,7 @@ button:hover {
     flex-direction: column;
     text-align: center;
     gap: 15px;
+    width: 234px;
 }
 
 #pad-container {
@@ -60,6 +70,7 @@ button:hover {
     flex-shrink: 0;
     border: 2px solid black;
     box-shadow: 5px 5px 0px darkgray;
+    background-color: white;
 }
 
 #footer {
@@ -74,11 +85,28 @@ button:hover {
     height: 30px;
 }
 
+#picker {
+    align-self: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1.5px ridge rgb(85, 85, 85);
+}
+
+#picker:hover {
+    cursor: pointer;
+}
+
 .canvas-square {
     width: var(--square_px);
     height: var(--square_px);
     flex-shrink: 0;
     background-color: white;
+}
+
+.hoverable:hover {
+    background-color: rgb(123, 123, 123);
+    cursor: pointer;
 }
 
 /* Greyscale class only used to "tag" squares for greyscale - useless CSS property */

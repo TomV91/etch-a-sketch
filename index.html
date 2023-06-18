@@ -15,17 +15,17 @@
     </div>
     <div id="main-container">
         <div id="buttons-container-1">
-            <button id='btn-black' name="black" onclick=set_black()>Black</button>
-            <button id='btn-grayscale' name="grayscale" onclick=set_gray()>Gray Scale</button>
-            <button id='btn-rainbow' name="rainbow" onclick=set_rainbow()>Random Colour</button>
-            <button id='btn-eraser' name="eraser" onclick=set_eraser()>Eraser</button>
+            <button id='btn-black' name="black" class='hoverable' onclick=set_black()>Black</button>
+            <button id='btn-grayscale' name="grayscale" class='hoverable' onclick=set_gray()>Gray Scale</button>
+            <button id='btn-rainbow' name="rainbow" class='hoverable' onclick=set_rainbow()>Random Colour</button>
+            <button id='btn-eraser' name="eraser" class='hoverable' onclick=set_eraser()>Eraser</button>
             <label for="picker">Pen Colour Picker:</label>
-            <input type="color" id="picker" name="picker" value="#ff0000">
+            <input type="color" id="picker" name="picker" value="#000000">
         </div>
         <div id="pad-container"></div>
         <div id="buttons-container-2">
-            <button id='btn-clear' name="clear" onclick=clear_pad()>Clear Pad</button>
-            <button id='btn-custom' name="custom-pad" onclick=custom_pad()>Choose Pad Size</button>
+            <button id='btn-clear' name="clear" class='hoverable' onclick=clear_pad()>Clear Pad</button>
+            <button id='btn-custom' name="custom-pad" class='hoverable' onclick=custom_pad()>Choose Pad Size</button>
         </div>
     </div>
     <div id="footer">Developed by TVWD (TomV Web Design) as part of <em>The Odin Project</em>, 2023</div>
