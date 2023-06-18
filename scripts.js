@@ -4,6 +4,8 @@ let container = document.querySelector('#pad-container');
 let mouse_drag = false;
 let canvas_size = 16;
 let square;
+let picked_colour;
+let colorPicker = document.querySelector('#picker'); 
 
 // Window mouse events
 
@@ -83,6 +85,15 @@ function set_eraser() {
     }
 }
 
+function set_picker() {
+    for (let i = 0; i < Math.pow(canvas_size,2); i++) {
+        square = document.querySelector(`#square${i}`);
+        clear_event_listeners(square);
+        square.addEventListener('click', click_picker);
+        square.addEventListener('mouseenter', drag_picker);
+    }
+}
+
 function click_black(event) {
     event.target.classList.remove('greyscale_base');
     event.target.style.backgroundColor = 'black';
@@ -149,6 +160,20 @@ function drag_eraser(event) {
     }
 }
 
+function click_picker(event) {
+    event.target.classList.remove('greyscale_base');
+    event.target.style.backgroundColor = picked_colour;
+    event.target.style.opacity = 1;
+}
+
+function drag_picker(event) {
+    if (mouse_drag === true) {
+        event.target.classList.remove('greyscale_base');
+        event.target.style.backgroundColor = picked_colour;
+        event.target.style.opacity = 1;
+    }
+}
+
 function clear_pad() {
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         document.querySelector(`#square${i}`).style.backgroundColor = 'white';
@@ -164,8 +189,16 @@ function clear_event_listeners(pad_square) {
     pad_square.removeEventListener('mouseenter', drag_rainbow);
     pad_square.removeEventListener('click', click_eraser);
     pad_square.removeEventListener('mouseenter', drag_eraser);
+    pad_square.removeEventListener('click', click_picker);
+    pad_square.removeEventListener('mouseenter', drag_picker);
 }
 
 // Builds default pad
 
 create_pad(canvas_size);
+
+// Sets up color picker listener
+colorPicker.addEventListener('input', function() {
+    picked_colour = this.value;
+    set_picker();
+});
