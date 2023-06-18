@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'VCR';
+    src: url(./assets/VCR_OSD_MONO_1.001.ttf);
+}
+
 :root {
     --square_px: 37.5px;
 }
@@ -6,6 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'VCR', sans-serif;
+    background-color: rgba(126, 196, 178, 0.5);
 }
 
 button {
@@ -13,6 +20,7 @@ button {
     background-color: black;
     color: white;
     font-size: 20px;
+    font-family: 'VCR', sans-serif;
 }
 
 button:hover {
@@ -59,6 +67,7 @@ button:hover {
     width: var(--square_px);
     height: var(--square_px);
     flex-shrink: 0;
+    background-color: white;
 }
 
 /* Greyscale class only used to "tag" squares for greyscale - useless CSS property */
