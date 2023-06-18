@@ -24,7 +24,8 @@ button {
 }
 
 button:hover {
-    background-color: darkgrey;
+    background-color: rgb(123, 123, 123);
+    cursor: pointer;
 }
 
 #title-container {
@@ -61,7 +62,17 @@ button:hover {
     box-shadow: 5px 5px 0px darkgray;
 }
 
+#footer {
+    margin-top: 40px;
+}
 
+#github_link {
+    margin-top: 20px;
+}
+
+#github_link > a > img {
+    height: 30px;
+}
 
 .canvas-square {
     width: var(--square_px);
