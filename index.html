@@ -16,11 +16,11 @@
     <div id="main-container">
         <div id="buttons-container-1">
             <button id='btn-black' name="black" class='hoverable' onclick=set_black()>Black</button>
-            <button id='btn-grayscale' name="grayscale" class='hoverable' onclick=set_gray()>Gray Scale</button>
+            <button id='btn-greyscale' name="greyscale" class='hoverable' onclick=set_grey()>Grey Scale</button>
             <button id='btn-rainbow' name="rainbow" class='hoverable' onclick=set_rainbow()>Random Colour</button>
             <button id='btn-eraser' name="eraser" class='hoverable' onclick=set_eraser()>Eraser</button>
-            <label for="picker">Pen Colour Picker:</label>
-            <input type="color" id="picker" name="picker" value="#000000">
+            <label for="picker" id="picker-label" onclick=clear_selected()>Pen Colour Picker:</label>
+            <input type="color" id="picker" name="picker" value="#000000" onclick="document.querySelector('#picker-label').classList.add('selected');">
         </div>
         <div id="pad-container"></div>
         <div id="buttons-container-2">

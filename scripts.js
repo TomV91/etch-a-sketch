@@ -27,6 +27,7 @@ function create_pad(size) {
         create_square.addEventListener('click', click_black);
         create_square.addEventListener('mouseenter', drag_black);
         container.appendChild(create_square);
+        document.querySelector('#btn-black').classList.add('selected');
     }
 }
 
@@ -50,6 +51,8 @@ function custom_pad() {
 }
 
 function set_black() {
+    clear_selected();
+    document.querySelector('#btn-black').classList.add('selected');
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
         clear_event_listeners(square);
@@ -58,7 +61,9 @@ function set_black() {
     }
 }
 
-function set_gray() {
+function set_grey() {
+    clear_selected();
+    document.querySelector('#btn-greyscale').classList.add('selected');
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
         clear_event_listeners(square);
@@ -68,6 +73,8 @@ function set_gray() {
 }
 
 function set_rainbow() {
+    clear_selected();
+    document.querySelector('#btn-rainbow').classList.add('selected');
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
         clear_event_listeners(square);
@@ -77,6 +84,8 @@ function set_rainbow() {
 }
 
 function set_eraser() {
+    clear_selected();
+    document.querySelector('#btn-eraser').classList.add('selected');
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
         clear_event_listeners(square);
@@ -86,6 +95,8 @@ function set_eraser() {
 }
 
 function set_picker() {
+    clear_selected();
+    document.querySelector('#picker-label').classList.add('selected');
     for (let i = 0; i < Math.pow(canvas_size,2); i++) {
         square = document.querySelector(`#square${i}`);
         clear_event_listeners(square);
@@ -191,6 +202,14 @@ function clear_event_listeners(pad_square) {
     pad_square.removeEventListener('mouseenter', drag_eraser);
     pad_square.removeEventListener('click', click_picker);
     pad_square.removeEventListener('mouseenter', drag_picker);
+}
+
+function clear_selected() {
+    document.querySelector('#btn-black').classList.remove('selected');
+    document.querySelector('#btn-greyscale').classList.remove('selected');
+    document.querySelector('#btn-rainbow').classList.remove('selected');
+    document.querySelector('#btn-eraser').classList.remove('selected');
+    document.querySelector('#picker-label').classList.remove('selected');
 }
 
 // Builds default pad
